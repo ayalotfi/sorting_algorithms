@@ -1,31 +1,31 @@
 #include "sort.h"
 
 /**
-*swap -> swap two elements
-*@array: Array
-*@item1: Element 1
-*@item2: Element 2
+*swap_p ->> swap two itmes.
+*@array: Array.
+*@item_plus: Element one.
+*@item_pluss: Element tow.
 */
 
-void swap(int *array, ssize_t item1, ssize_t item2)
+void swap_p(int *array, ssize_t item_plus, ssize_t item_pluss)
 {
 	int i;
 
-	i = array[item1];
-	array[item1] = array[item2];
-	array[item2] = i;
+	i = array[item_plus];
+	array[item_plus] = array[item_pluss];
+	array[item_pluss] = i;
 }
 
 /**
- *hoare_partition -> Hoare partition scheme
- *@array: Array
- *@first: First Array Element
- *@last: Last Array Element
- *@size: Array's size
- *Return: Position
+ *hoare_partition_p ->> Hore division scheme.
+ *@array: Array.
+ *@first: The first array element
+ *@last: The last array element
+ *@size: matrix size.
+ *Return: position.
  */
 
-int hoare_partition(int *array, int first, int last, int size)
+int hoare_partition_p(int *array, int first, int last, int size)
 {
 	int a = first - 1, b = last + 1;
 	int p = array[last];
@@ -40,40 +40,40 @@ int hoare_partition(int *array, int first, int last, int size)
 		} while (array[b] > p);
 		if (a >= b)
 			return (a);
-		swap(array, a, b);
+		swap_p(array, a, b);
 		print_array(array, size);
 	}
 }
 
 /**
- *qs -> Quicksort algorithm
+ *qs_p ->> Quicksort algorithm
  *@array: Array
- *@first: Element 1
- *@last: Element 2
- *@size: Array's size
+ *@first: Element one.
+ *@last: Element tow.
+ *@size: matrix size.
  */
 
-void qs(int *array, ssize_t first, ssize_t last, int size)
+void qs_p(int *array, ssize_t first, ssize_t last, int size)
 {
 	ssize_t p = 0;
 
 	if (first < last)
 	{
-		p = hoare_partition(array, first, last, size);
-		qs(array, first, p - 1, size);
-		qs(array, p, last, size);
+		p = hoare_partition_p(array, first, last, size);
+		qs_p(array, first, p - 1, size);
+		qs_p(array, p, last, size);
 	}
 }
 
 /**
- *quick_sort_hoare -> Sorts an array of integers in ascending order
- *@array: Array
- *@size: Array's size
+ *quick_sort_hoare ->> Sorts an array of int in ascending order.
+ *@array: Array.
+ *@size: matrix size.
  */
 
 void quick_sort_hoare(int *array, size_t size)
 {
 	if (!array || size < 2)
 		return;
-	qs(array, 0, size - 1, size);
+	qs_p(array, 0, size - 1, size);
 }

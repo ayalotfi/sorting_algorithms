@@ -1,54 +1,54 @@
 #include "sort.h"
 
 /**
- * swap -> Swap two elements
- * @arr: Array
- * @item1: First Item
- * @item2: Second Item
- * @order: 1: Ascending Order, 0 Descending Order
+ * swap ->> Swap two items.
+ * @arr: Array.
+ * @item_plus: Item one.
+ * @item_pluss: The second element.
+ * @order: 1 : ascending order , 0 descending order.
  */
 
-void swap(int arr[], int item1, int item2, int order)
+void swap(int arr[], int item_plus, int item_pluss, int order)
 {
 	int i;
 
-	if (order == (arr[item1] > arr[item2]))
+	if (order == (arr[item_plus] > arr[item_pluss]))
 	{
-		i = arr[item1];
-		arr[item1] = arr[item2];
-		arr[item2] = i;
+		i = arr[item_plus];
+		arr[item_plus] = arr[item_pluss];
+		arr[item_pluss] = i;
 	}
 }
 
 /**
- * merge -> Sorts an array of integers in ascending order
- * @arr: Array
- * @low: First Element
- * @nelemnt: Number Elements
- * @order: 1: Ascending Order, 0 Descending Order
+ * merge ->> Sorts an array of int in ascending order.
+ * @arr: Array.
+ * @low: Item one.
+ * @nelemnt: number of items.
+ * @order: 1 : Ascending Order , 0 Descending Order.
  */
 
 void merge(int arr[], int low, int nelemnt, int order)
 {
-	int m, i;
+	int n, i;
 
 	if (nelemnt > 1)
 	{
-		m = nelemnt / 2;
-		for (i = low; i < low + m; i++)
-			swap(arr, i, i + m, order);
-		merge(arr, low, m, order);
-		merge(arr, low + m, m, order);
+		n = nelemnt / 2;
+		for (i = low; i < low + n; i++)
+			swap(arr, i, i + n, order);
+		merge(arr, low, n, order);
+		merge(arr, low + n, n, order);
 	}
 }
 
 /**
- * bitonicsort -> Sorts an array of integers in ascending order
- * @arr: Array
- * @low: First Element
- * @nelemnt: Elements Number
- * @order: 1: Ascending Order, 0 Descending Order
- * @size: List's size
+ * bitonicsort ->> Sorts an array of int in ascending order.
+ * @arr: Array.
+ * @low: Item one.
+ * @nelemnt: number of items.
+ * @order: 1 : Ascending Order , 0 Descending Order.
+ * @size: matrix size.
  */
 
 void bitonicsort(int arr[], int low, int nelemnt, int order, int size)
@@ -84,9 +84,9 @@ void bitonicsort(int arr[], int low, int nelemnt, int order, int size)
 }
 
 /**
- * bitonic_sort -> Sorts integers array in ascending order
- * @array: Array
- * @size: List's size
+ * bitonic_sort ->> Sorts int array in ascending order.
+ * @array: Array.
+ * @size: list size.
  */
 
 void bitonic_sort(int *array, size_t size)
