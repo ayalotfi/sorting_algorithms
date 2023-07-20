@@ -1,28 +1,28 @@
 #include "sort.h"
 
 /**
- * max_val -> Find the max value from array
- * @array: Array Integers
- * @size: Array's size
- * Return: Max Value
+ * return_max_val ->> Find the maximum value of the matrix.
+ * @array: int array.
+ * @size: matrix size.
+ * Return: Value Max.
  */
 
-int max_val(int *array, size_t size)
+int return_max_val(int *array, size_t size)
 {
-	int max = array[0];
+	int m = array[0];
 	size_t i;
 
 	for (i = 0; i < size; i++)
 	{
-		if (array[i] > max)
-			max = array[i];
-	} return (max);
+		if (array[i] > m)
+			m = array[i];
+	} return (m);
 }
 
 /**
- * radix_sort -> Sorts an array of integers in ascending order
- * @array: Array Integers
- * @size: Array's size
+ * radix_sort ->> Sorts an array of int in ascending the order.
+ * @array: int array.
+ * @size: matrix size.
  */
 
 void radix_sort(int *array, size_t size)
@@ -33,7 +33,7 @@ void radix_sort(int *array, size_t size)
 
 	if (!array || size < 2)
 		return;
-	max = max_val(array, size);
+	max = return_max_val(array, size);
 	new = malloc(sizeof(int) * size);
 	while (max / j > 0)
 	{

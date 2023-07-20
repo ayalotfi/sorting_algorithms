@@ -1,56 +1,56 @@
 #include "sort.h"
 
 /**
- * check_tree -> checks the tree
- * @array: Array Integers
- * @size: Array's size
- * @size_init: Array's Initial Size
- * @i: Index
+ * check_tree ->> check tree.
+ * @array: int array.
+ * @size: matrix size.
+ * @size_init: The initial size of the array.
+ * @i: Index.
 **/
 
 void check_tree(int *array, size_t size_init, size_t size, size_t i)
 {
 
-	int n, b1, b2;
-	size_t br1, br2;
+	int n, num1, num2;
+	size_t num4, num3;
 
-	br1 = i * 2 + 1;
-	br2 = br1 + 1;
-	b1 = array[br1];
-	b2 = array[br2];
-	if (((br1 < size) && (br2 < size) &&
-		(b1 >= b2 && b1 > array[i]))
-		|| ((br1 == size - 1) && b1 > array[i]))
+	num4 = i * 2 + 1;
+	num3 = num4 + 1;
+	num1 = array[num4];
+	num2 = array[num3];
+	if (((num4 < size) && (num3 < size) &&
+		(num1 >= num2 && num1 > array[i]))
+		|| ((num4 == size - 1) && num1 > array[i]))
 	{
 		n = array[i];
-		array[i] = b1;
-		array[br1] = n;
+		array[i] = num1;
+		array[num4] = n;
 		print_array(array, size_init);
 	}
-	else if ((br1 < size) && (br2 < size) &&
-		(b2 > b1 && b2 > array[i]))
+	else if ((num4 < size) && (num3 < size) &&
+		(num2 > num1 && num2 > array[i]))
 	{
 		n = array[i];
-		array[i] = b2;
-		array[br2] = n;
+		array[i] = num2;
+		array[num3] = n;
 		print_array(array, size_init);
 	}
-	if (br1 < size - 1)
-		check_tree(array, size_init, size, br1);
-	if (br2 < size - 1)
-		check_tree(array, size_init, size, br2);
+	if (num4 < size - 1)
+		check_tree(array, size_init, size, num4);
+	if (num3 < size - 1)
+		check_tree(array, size_init, size, num3);
 }
 
 /**
- * heap_sort -> Sorts an array of integers in ascending order
- * @array: Array Integers
- * @size: Array's size
+ * heap_sort ->> Sorts an array of int in ascending the order.
+ * @array: int array.
+ * @size: matrix size.
 **/
 
 void heap_sort(int *array, size_t size)
 {
 	size_t i, size_init = size;
-	int n;
+	int m;
 
 	if (!array)
 		return;
@@ -60,9 +60,9 @@ void heap_sort(int *array, size_t size)
 	}
 	for (i = 0; i < size_init - 1; i++)
 	{
-		n = array[0];
+		m = array[0];
 		array[0] = array[size - 1 - i];
-		array[size - 1 - i] = n;
+		array[size - 1 - i] = m;
 		print_array(array, size_init);
 		check_tree(array, size_init, size - i - 1, 0);
 	}
