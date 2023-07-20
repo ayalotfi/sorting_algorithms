@@ -1,14 +1,14 @@
 #include "sort.h"
 
 /**
- * merge -> Merges two subarrays of array
- * @array: Array Integers
- * @size: Array's size
- * @l: Array's left side
- * @r: Array's right side
+ * merge_sub_arry_rcv ->> Merges two sub-arrays of the matrix.
+ * @array: int array.
+ * @size: matrix size.
+ * @l: left side of the array.
+ * @r: the right side of the array.
  **/
 
-void merge(int *array, int *l, int *r, size_t size)
+void merge_sub_arry_rcv(int *array, int *l, int *r, size_t size)
 {
 	int i = 0, j = 0, k = 0;
 	int L, R;
@@ -45,7 +45,7 @@ void merge(int *array, int *l, int *r, size_t size)
 
 void merge_sort(int *array, size_t size)
 {
-	size_t m = 0, i;
+	size_t n = 0, i;
 	int left[1000];
 	int right[1000];
 
@@ -53,12 +53,12 @@ void merge_sort(int *array, size_t size)
 		return;
 	if (size < 2)
 		return;
-	m = size / 2;
-	for (i = 0; i < m; i++)
+	n = size / 2;
+	for (i = 0; i < n; i++)
 		left[i] = array[i];
-	for (i = m; i < size; i++)
-		right[i - m] = array[i];
-	merge_sort(left, m);
-	merge_sort(right, size - m);
-	merge(array, left, right, size);
+	for (i = n; i < size; i++)
+		right[i - n] = array[i];
+	merge_sort(left, n);
+	merge_sort(right, size - n);
+	merge_sub_arry_rcv(array, left, right, size);
 }
