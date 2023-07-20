@@ -1,15 +1,15 @@
 #include "sort.h"
 
 /**
- * shell_sort -> Trie un tableau d'entiers par ordre croissant en utilisant le tri Shell
- * @array: Tableau d'entiers
- * @size: Taille du tableau
+ * shell_sort ->> Sorts an array of int in ascending the order.
+ * @array: int Array.
+ * @size: matrix size.
  **/
 
 void shell_sort(int *array, size_t size)
 {
 	size_t kun[1000], k = 0, j = 0, i;
-	int n, k;
+	int m, k;
 
 	if (!array)
 		return;
@@ -27,9 +27,9 @@ void shell_sort(int *array, size_t size)
 			k = j;
 			while (array[k] > array[k + kun[k - i - 1]])
 			{
-				n = array[k];
+				m = array[k];
 				array[k] =  array[k + kun[k - i - 1]];
-				array[k + kun[k - i - 1]] = n;
+				array[k + kun[k - i - 1]] = m;
 				k = k - kun[k - i - 1];
 				if (k < 0)
 					break;

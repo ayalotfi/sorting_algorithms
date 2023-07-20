@@ -1,9 +1,10 @@
 #include "sort.h"
 
 /**
- * print_array - Affiche un tableau d'entiers.
- * @tableau: Tableau d'entiers.
- * @taille: Taille du tableau.
+ * print_array - Prints an array of integers
+ *
+ * @array: Array Integers
+ * @size: Array's size
  */
 
 void print_array(const int *array, size_t size)

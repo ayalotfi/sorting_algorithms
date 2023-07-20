@@ -1,15 +1,14 @@
 #include "sort.h"
 
 /**
- * bubble_sort trie un tableau d'entiers par ordre croissant en utilisant l'algorithme du tri à bulles.
- *@Le tableau à trier.
- *@La taille du tableau.
- 
+ * bubble_sort ->> Sorts an array of int in ascending the order.
+ * @array: int array.
+ * @size: matrix size.
  **/
 
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j, k;
+	size_t i, j, s;
 
 	for (i = 0; i < size; i++)
 	{
@@ -17,9 +16,9 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[j - 1] > array[j])
 			{
-				k = array[j];
+				s = array[j];
 				array[j] = array[j - 1];
-				array[j - 1] = k;
+				array[j - 1] = s;
 				print_array(array, size);
 			}
 		}

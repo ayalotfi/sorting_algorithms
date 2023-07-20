@@ -1,47 +1,47 @@
 #include "sort.h"
 /**
- * swap1 -> échange les nœuds de gauche à droite
- * @list: Liste
- * @head: Nœud de tête
- * @aux: Nœud auxiliaire
+ * swap_plus ->> Swap nodes from left to right.
+ * @list: list.
+ * @_up: Node.
+ * @vary: auxiliary node.
  */
 
-void swap1(listint_t **list, listint_t *head, listint_t *aux)
+void swap_plus(list_int_t **list, list_int_t *_up, list_int_t *vary)
 {
-	if (head->prev)
-		head->prev->next = aux;
+	if (_up->prev)
+		_up->prev->next = vary;
 	else
-		*list = aux;
-	if (aux->next)
-		aux->next->prev = head;
-	head->next = aux->next;
-	aux->prev = head->prev;
-	aux->next = head;
-	head->prev = aux;
+		*list = vary;
+	if (vary->next)
+		vary->next->prev = _up;
+	_up->next = vary->next;
+	vary->prev = _up->prev;
+	vary->next = _up;
+	_up->prev = vary;
 	print_list(*list);
 
 }
 
 /**
- * swap2 -> échange les nœuds de droite à gauche
- * @list: Liste
- * @head: Nœud de tête
- * @aux: Nœud auxiliaire
+ * swap_plus_plus ->> Swaps nodes from right to left.
+ * @list: List
+ * @_up: _up Node
+ * @vary: auxiliar Node
  */
 
-void swap2(listint_t **list, listint_t *head, listint_t *aux)
+void swap_plus_plus(list_int_t **list, list_int_t *_up, list_int_t *vary)
 {
-	aux = head->prev;
-	aux->next->prev = aux->prev;
-	if (aux->prev)
-		aux->prev->next = aux->next;
+	vary = _up->prev;
+	vary->next->prev = vary->prev;
+	if (vary->prev)
+		vary->prev->next = vary->next;
 	else
-		*list = aux->next;
-	aux->prev = aux->next;
-	aux->next = aux->next->next;
-	aux->prev->next = aux;
-	if (aux->next)
-		aux->next->prev = aux;
+		*list = vary->next;
+	vary->prev = vary->next;
+	vary->next = vary->next->next;
+	vary->prev->next = vary;
+	if (vary->next)
+		vary->next->prev = vary;
 	print_list(*list);
 }
 
@@ -50,9 +50,9 @@ void swap2(listint_t **list, listint_t *head, listint_t *aux)
  * @list: List
  **/
 
-void cocktail_sort_list(listint_t **list)
+void cocktail_sort_list(list_int_t **list)
 {
-	listint_t *h, *a;
+	list_int_t *h, *a;
 	int b = 1;
 
 	if (list)
@@ -66,7 +66,7 @@ void cocktail_sort_list(listint_t **list)
 				if (h->n > h->next->n)
 				{
 					a = h->next;
-					swap1(list, h, a);
+					swap_plus(list, h, a);
 					b = 1;
 				}
 				else
@@ -79,7 +79,7 @@ void cocktail_sort_list(listint_t **list)
 			{
 				if (h->prev->n > h->n)
 				{
-					swap2(list, h, a);
+					swap_plus_plus(list, h, a);
 					b = 1;
 				}
 				else

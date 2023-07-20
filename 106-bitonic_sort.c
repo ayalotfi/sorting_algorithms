@@ -1,11 +1,11 @@
 #include "sort.h"
 
 /**
- * swap -> Échange deux éléments.
- * @arr: Tableau.
- * @item1: Premier élément.
- * @item2: Deuxième élément.
- * @order: 1: Ordre croissant, 0: Ordre décroissant.
+ * swap -> Swap two elements
+ * @arr: Array
+ * @item1: First Item
+ * @item2: Second Item
+ * @order: 1: Ascending Order, 0 Descending Order
  */
 
 void swap(int arr[], int item1, int item2, int order)
@@ -21,11 +21,11 @@ void swap(int arr[], int item1, int item2, int order)
 }
 
 /**
- * merge -> Trie un tableau d'entiers par ordre croissant ou décroissant.
- * @arr: Tableau.
- * @low: Premier élément.
- * @nelemnt: Nombre d'éléments.
- * @order: 1: Ordre croissant, 0: Ordre décroissant.
+ * merge -> Sorts an array of integers in ascending order
+ * @arr: Array
+ * @low: First Element
+ * @nelemnt: Number Elements
+ * @order: 1: Ascending Order, 0 Descending Order
  */
 
 void merge(int arr[], int low, int nelemnt, int order)
@@ -43,12 +43,12 @@ void merge(int arr[], int low, int nelemnt, int order)
 }
 
 /**
- *  bitonicsort -> Trie un tableau d'entiers par ordre croissant ou décroissant (algorithme bitonique).
- * @arr: Tableau.
- * @low: Premier élément.
- * @nelemnt: Nombre d'éléments.
- * @order: 1: Ordre croissant, 0: Ordre décroissant.
- * @size: Taille du tableau.
+ * bitonicsort -> Sorts an array of integers in ascending order
+ * @arr: Array
+ * @low: First Element
+ * @nelemnt: Elements Number
+ * @order: 1: Ascending Order, 0 Descending Order
+ * @size: List's size
  */
 
 void bitonicsort(int arr[], int low, int nelemnt, int order, int size)
@@ -84,9 +84,9 @@ void bitonicsort(int arr[], int low, int nelemnt, int order, int size)
 }
 
 /**
- * bitonic_sort -> Trie un tableau d'entiers par ordre croissant (algorithme bitonique).
- * @array: Tableau d'entiers.
- * @size: Taille du tableau.
+ * bitonic_sort -> Sorts integers array in ascending order
+ * @array: Array
+ * @size: List's size
  */
 
 void bitonic_sort(int *array, size_t size)

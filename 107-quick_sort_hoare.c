@@ -1,10 +1,10 @@
 #include "sort.h"
 
 /**
- *  swap -> Échange deux éléments
-* @array: Tableau
-* @item1: Élément 1
-* @item2: Élément 2
+*swap -> swap two elements
+*@array: Array
+*@item1: Element 1
+*@item2: Element 2
 */
 
 void swap(int *array, ssize_t item1, ssize_t item2)
@@ -17,12 +17,12 @@ void swap(int *array, ssize_t item1, ssize_t item2)
 }
 
 /**
- * hoare_partition -> Schéma de partitionnement de Hoare
- * @array: Tableau
- * @first: Premier élément du tableau
- * @last: Dernier élément du tableau
- * @size: Taille du tableau
- * Retourne: La position de la partition
+ *hoare_partition -> Hoare partition scheme
+ *@array: Array
+ *@first: First Array Element
+ *@last: Last Array Element
+ *@size: Array's size
+ *Return: Position
  */
 
 int hoare_partition(int *array, int first, int last, int size)
@@ -46,11 +46,11 @@ int hoare_partition(int *array, int first, int last, int size)
 }
 
 /**
- * qs -> Algorithme de tri rapide (Quicksort)
- * @array: Tableau
- * @first: Premier élément du tableau
- * @last: Dernier élément du tableau
- * @size: Taille du tableau
+ *qs -> Quicksort algorithm
+ *@array: Array
+ *@first: Element 1
+ *@last: Element 2
+ *@size: Array's size
  */
 
 void qs(int *array, ssize_t first, ssize_t last, int size)
@@ -66,9 +66,9 @@ void qs(int *array, ssize_t first, ssize_t last, int size)
 }
 
 /**
- * quick_sort_hoare -> Trie un tableau d'entiers par ordre croissant en utilisant le tri rapide (Quicksort) avec le schéma de Hoare
- * @array: Tableau d'entiers
- * @size: Taille du tableau
+ *quick_sort_hoare -> Sorts an array of integers in ascending order
+ *@array: Array
+ *@size: Array's size
  */
 
 void quick_sort_hoare(int *array, size_t size)

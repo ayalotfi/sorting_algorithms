@@ -1,13 +1,13 @@
 #include "sort.h"
 
 /**
- * tri_insertion_list - Trie une liste doublement chaînée d'entiers.
- * liste: Liste doublement chaînée d'entiers.
+ * insertion_sort_list ->> Sorts a list of doubly linked int.
+ * @list: doubly linked list.
  */
 
-void insertion_sort_list(listint_t **list)
+void insertion_sort_list(list_int_t **list)
 {
-	listint_t *n;
+	list_int_t *n;
 
 	if (list == NULL || (*list)->next == NULL)
 		return;
@@ -23,15 +23,15 @@ void insertion_sort_list(listint_t **list)
 }
 
 /**
- *echanger_noeud - Échange deux nœuds.
- *@noeud: Nœud.
- *@liste: Liste des nœuds.
- *Renvoi: Nœud.
+ *swap_node ->> Switch two nodes.
+ *@node: Node.
+ *@list: Node list.
+ *Return: Node.
  */
 
-listint_t *swap_node(listint_t *node, listint_t **list)
+list_int_t *swap_node(list_int_t *node, list_int_t **list)
 {
-	listint_t *prev = node->prev, *now = node;
+	list_int_t *prev = node->prev, *now = node;
 
 	prev->next = now->next;
 	if (now->next)

@@ -1,36 +1,36 @@
 #include "sort.h"
 
 /**
- *  tri_selection - Trie un tableau d'entiers par ordre croissant en utilisant le tri par sélection.
- * @tableau: Tableau d'entiers.
- * @taille: Taille du tableau.
+ * selection_sort ->> Sorts an array of int in ascending the order.
+ * @array: Int Array.
+ * @size: matrix size.
  **/
 
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, k, n;
-	int a, b;
+	size_t i, j, s, m;
+	int ar, br;
 
 	if (array)
 	{
 		for (i = 0; i < size; i++)
 		{
-			a = array[i];
-			b = 0;
+			ar = array[i];
+			br = 0;
 			for (j = i; j < size ; j++)
 			{
-				if (array[j] < a)
+				if (array[j] < ar)
 				{
-					n = j;
-					a = array[j];
-					b = 1;
+					m = j;
+					ar = array[j];
+					br = 1;
 				}
 			}
-			if (b == 1)
+			if (br == 1)
 			{
-				k = array[i];
-				array[i] = array[n];
-				array[n] = k;
+				s = array[i];
+				array[i] = array[m];
+				array[m] = s;
 				print_array(array, size);
 			}
 		}

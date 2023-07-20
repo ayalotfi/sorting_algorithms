@@ -1,14 +1,14 @@
 #include "sort.h"
 
 /**
- * counting_sort -> Trie un tableau d'entiers par ordre croissant en utilisant le tri par dénombrement
- * @array: Tableau d'entiers
- * @size: Taille du tableau
+ * counting_sort ->> Sorts int array in ascending the order.
+ * @array: int Array.
+ * @size: matrix size.
  **/
 
 void counting_sort(int *array, size_t size)
 {
-	int n, j, *a, *count;
+	int n, j, *m, *c;
 	size_t i;
 
 	if (!array || size < 2)
@@ -18,24 +18,24 @@ void counting_sort(int *array, size_t size)
 	{
 		if (array[i] > n)
 			n = array[i];
-	} count = calloc((n + 1), sizeof(int));
+	} c = calloc((n + 1), sizeof(int));
 	for (i = 0; i < size; i++)
 	{
-		count[array[i]]++;
+		c[array[i]]++;
 	}
 	for (j = 1; j < n; j++)
 	{
-		count[j + 1] += count[j];
-	} print_array(count, n + 1);
+		c[j + 1] += c[j];
+	} print_array(c, n + 1);
 	a = malloc(sizeof(int) * size);
 	for (i = 0; i < size; i++)
 	{
-		count[array[i]]--;
-		a[count[array[i]]] = array[i];
+		c[array[i]]--;
+		m[c[array[i]]] = array[i];
 	}
 	for (i = 0; i < size; i++)
 	{
-		array[i] = a[i];
-	} free(a);
-	free(count);
+		array[i] = m[i];
+	} free(m);
+	free(c);
 }

@@ -1,11 +1,11 @@
 #include "sort.h"
 
 /**
- *  merge -> Fusionne deux sous-tableaux en un tableau.
- * @array: Tableau d'entiers.
- * @size: Taille du tableau.
- * @l: Côté gauche du tableau.
- * @r: Côté droit du tableau.
+ * merge -> Merges two subarrays of array
+ * @array: Array Integers
+ * @size: Array's size
+ * @l: Array's left side
+ * @r: Array's right side
  **/
 
 void merge(int *array, int *l, int *r, size_t size)
@@ -38,9 +38,9 @@ void merge(int *array, int *l, int *r, size_t size)
 }
 
 /**
- * merge_sort -> Trie un tableau d'entiers par ordre croissant en utilisant le tri par fusion.
- * @array: Tableau d'entiers.
- * @size: Taille du tableau.
+ * merge_sort -> Sorts an array of integers in ascending order
+ * @array: Array Integers
+ * @size: Array's size
  **/
 
 void merge_sort(int *array, size_t size)

@@ -1,13 +1,12 @@
 #include "sort.h"
 
 /**
- *check_tree -> Vérifie l'arbre
- * @array: Tableau d'entiers
- * @size: Taille du tableau
- * @size_init: Taille initiale du tableau
+ * check_tree -> checks the tree
+ * @array: Array Integers
+ * @size: Array's size
+ * @size_init: Array's Initial Size
  * @i: Index
- **/ 
-
+**/
 
 void check_tree(int *array, size_t size_init, size_t size, size_t i)
 {
@@ -43,9 +42,9 @@ void check_tree(int *array, size_t size_init, size_t size, size_t i)
 }
 
 /**
- *  heap_sort -> Trie un tableau d'entiers par ordre croissant en utilisant le tri par tas
- * @array: Tableau d'entiers
- * @size: Taille du tableau
+ * heap_sort -> Sorts an array of integers in ascending order
+ * @array: Array Integers
+ * @size: Array's size
 **/
 
 void heap_sort(int *array, size_t size)

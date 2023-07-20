@@ -1,10 +1,10 @@
 #include "sort.h"
 
 /**
- *  max_val -> Trouve la valeur maximale du tableau.
- * @array: Tableau d'entiers.
- * @size: Taille du tableau.
- * Renvoie: La valeur maximale.
+ * max_val -> Find the max value from array
+ * @array: Array Integers
+ * @size: Array's size
+ * Return: Max Value
  */
 
 int max_val(int *array, size_t size)
@@ -20,9 +20,9 @@ int max_val(int *array, size_t size)
 }
 
 /**
- * radix_sort -> Trie un tableau d'entiers par ordre croissant en utilisant le tri par base (radix sort).
- * @array: Tableau d'entiers.
- * @size: Taille du tableau.
+ * radix_sort -> Sorts an array of integers in ascending order
+ * @array: Array Integers
+ * @size: Array's size
  */
 
 void radix_sort(int *array, size_t size)
