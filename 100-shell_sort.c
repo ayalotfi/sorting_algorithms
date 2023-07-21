@@ -8,7 +8,7 @@
 
 void shell_sort(int *array, size_t size)
 {
-	size_t kun[1000], j = 0, i;
+	size_t kun[1000], k = 0, j = 0, i;
 	int m, k;
 
 	if (!array)
