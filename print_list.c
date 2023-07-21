@@ -6,7 +6,7 @@
  *
  * @list: The list to be printed
  */
-void print_list(const list_int_t *list)
+void print_list(const listint_t *list)
 {
 	int i;
 

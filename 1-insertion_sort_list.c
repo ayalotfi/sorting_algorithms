@@ -5,9 +5,9 @@
  * @list: doubly linked list.
  */
 
-void insertion_sort_list(list_int_t **list)
+void insertion_sort_list(listint_t **list)
 {
-	list_int_t *n;
+	listint_t *n;
 
 	if (list == NULL || (*list)->next == NULL)
 		return;
@@ -29,9 +29,9 @@ void insertion_sort_list(list_int_t **list)
  *Return: Node.
  */
 
-list_int_t *swap_node(list_int_t *node, list_int_t **list)
+listint_t *swap_node(listint_t *node, listint_t **list)
 {
-	list_int_t *prev = node->prev, *now = node;
+	listint_t *prev = node->prev, *now = node;
 
 	prev->next = now->next;
 	if (now->next)

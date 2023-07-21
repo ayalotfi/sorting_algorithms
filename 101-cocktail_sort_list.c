@@ -6,7 +6,7 @@
  * @vary: auxiliary node.
  */
 
-void swap_plus(list_int_t **list, list_int_t *_up, list_int_t *vary)
+void swap_plus(listint_t **list, listint_t *_up, listint_t *vary)
 {
 	if (_up->prev)
 		_up->prev->next = vary;
@@ -29,7 +29,7 @@ void swap_plus(list_int_t **list, list_int_t *_up, list_int_t *vary)
  * @vary: auxiliar Node
  */
 
-void swap_plus_plus(list_int_t **list, list_int_t *_up, list_int_t *vary)
+void swap_plus_plus(listint_t **list, listint_t *_up, listint_t *vary)
 {
 	vary = _up->prev;
 	vary->next->prev = vary->prev;
@@ -50,9 +50,9 @@ void swap_plus_plus(list_int_t **list, list_int_t *_up, list_int_t *vary)
  * @list: List
  **/
 
-void cocktail_sort_list(list_int_t **list)
+void cocktail_sort_list(listint_t **list)
 {
-	list_int_t *h, *a;
+	listint_t *h, *a;
 	int b = 1;
 
 	if (list)
