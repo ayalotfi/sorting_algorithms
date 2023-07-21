@@ -27,7 +27,7 @@ void counting_sort(int *array, size_t size)
 	{
 		c[j + 1] += c[j];
 	} print_array(c, n + 1);
-	a = malloc(sizeof(int) * size);
+	m = malloc(sizeof(int) * size);
 	for (i = 0; i < size; i++)
 	{
 		c[array[i]]--;
