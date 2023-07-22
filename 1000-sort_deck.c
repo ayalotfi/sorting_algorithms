@@ -4,7 +4,7 @@ int _str_cmp(const char *n1, const char *n2);
 char _get_value(deck_node_t *card);
 void insert_sort_deck_kind(deck_node_t **deck);
 void insert_sort_deck_value(deck_node_t **deck);
-void _sort_deck(deck_node_t **deck);
+void sort_deck(deck_node_t **deck);
 
 /**
  * _str_cmp ->> Compares two str.
@@ -122,10 +122,10 @@ void insert_sort_deck_value(deck_node_t **deck)
 }
 
 /**
- * _sort_deck ->> Sort the deck from ace to king and from spades to diamonds.
+ * sort_deck ->> Sort the deck from ace to king and from spades to diamonds.
  * @deck: A pointer to the deck_node_t duplex list header.
  */
-void _sort_deck(deck_node_t **deck)
+void sort_deck(deck_node_t **deck)
 {
 	if (deck == NULL || *deck == NULL || (*deck)->next == NULL)
 		return;
